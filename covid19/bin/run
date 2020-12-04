@@ -1,0 +1,10 @@
+#!/usr/bin/env ruby
+
+require "./lib/environment"
+
+state = CLI.new.start
+#binding.pry
+Covid.follow_up(state)
+
+  
+
