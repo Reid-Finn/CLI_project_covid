@@ -1,6 +1,6 @@
 class API
 
-    attr_accessor :covid_state, :STATE_NAME_TO_ABBR_LOWER
+    attr_accessor :covid_state, :STATE_NAME_TO_ABBR_LOWER, :error_message, :main_menu
     
     STATE_NAME_TO_ABBR_LOWER = {
         'alabama' => 'AL',
@@ -87,7 +87,7 @@ class API
             covid_state_h = covid_usa.reduce
             Covid.new.positive_increase_state(covid_state_h)
             
-        else
+        elsif
 
             #require 'uri'
             #require 'net/http'
@@ -102,18 +102,10 @@ class API
             response = http.request(request)
             covid_state_h = JSON.parse(response.body)
             Covid.new.positive_increase_state(covid_state_h)
-        
 
-            
-     
-            
-
-        
-            
+        else
+            CLI.new.error_message
+            CLI.new.main_menu  
         end
-    
-    
-    
     end
-
 end

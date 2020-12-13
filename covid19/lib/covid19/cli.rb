@@ -12,6 +12,15 @@ class CLI
         API.new.get_state(input)
     end
 
+    def main_menu
+        input = gets.chomp.downcase
+        API.new.get_state(input)
+    end
+
+
+    def error_message
+        puts "Error! Incorrect input. Please try again!"
+    end
 
 
     

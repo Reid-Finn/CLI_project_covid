@@ -20,12 +20,12 @@ class Covid
         puts "________________________________________________"
         puts "Would you like to learn more about this area?"
         puts "________________________________________________"
-        @yes_no = gets.chomp
-        if @yes_no == "yes"
+        yes_no = gets.chomp
+        if yes_no == "yes"
             hospital_cases = state["hospitalizedCurrently"]
             deaths = state["death"]
             puts "________________________________________________"
-            puts "#{hospital_cases} currently in the hospital."
+            puts "#{hospital_cases} people currently in the hospital."
             puts "#{deaths} people have died."
             puts "________________________________________________"
         else
@@ -34,6 +34,7 @@ class Covid
             puts "_________________________________________"
             
         end
+        
     end
 
 end
