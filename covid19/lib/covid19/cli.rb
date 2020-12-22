@@ -89,6 +89,15 @@ class CLI
         puts "#{state_deaths[0]} people have died in #{@original_input}."
     end
 
+    def main_menu
+        input = gets.chomp.downcase
+        API.new.get_state(input)
+    end
+
+
+    def error_message
+        puts "Error! Incorrect input. Please try again!"
+    end
 
 
      def sassy_answer
